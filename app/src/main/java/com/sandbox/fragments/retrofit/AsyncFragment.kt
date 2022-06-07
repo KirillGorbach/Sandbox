@@ -81,7 +81,8 @@ class AsyncFragment : Fragment() {
             }
             bitmap?.let { observableEmitter.onNext(it) }
 
-        }.subscribeOn(Schedulers.io())
+        }
+            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe{
                 binding.image.setImageBitmap(it)
