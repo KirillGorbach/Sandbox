@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/output_id"
+            style="@style/MyTableItemStyle"
+            android:layout_weight="0.3"
+            android:layout_gravity="start|center_vertical"
+            android:text="id"
+            android:layout_margin="@dimen/table_item_margin"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/output_name"
+            style="@style/MyTableItemStyle"
+            android:layout_weight="0.4"
+            android:layout_gravity="center|center_vertical"
+            android:text="name"
+            android:layout_margin="@dimen/table_item_margin"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/output_age"
+            style="@style/MyTableItemStyle"
+            android:layout_weight="0.3"
+            android:layout_gravity="end|center_vertical"
+            android:text="age"
+            android:layout_margin="@dimen/table_item_margin"/>
 
 </TableRow>

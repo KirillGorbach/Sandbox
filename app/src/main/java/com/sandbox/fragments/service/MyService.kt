@@ -27,6 +27,8 @@ class MyService : Service() {
     override fun onDestroy() {
         super.onDestroy()
         mediaPlayer.stop()
+        Toast.makeText(this, "Служба остановлена",
+            Toast.LENGTH_SHORT).show()
     }
 
     override fun onBind(p0: Intent?): IBinder? {

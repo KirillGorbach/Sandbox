@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_async"
-        android:name="com.sandbox.fragments.AsyncFragment"
+        android:name="com.sandbox.fragments.retrofit.AsyncFragment"
         android:label="Asynchronous download"
         tools:layout="@layout/fragment_async" />
 
@@ -27,4 +27,9 @@
         android:name="com.sandbox.fragments.broadcastreceiver.BroadcastReceiverFragment"
         android:label="BroadcastReceiver"
         tools:layout="@layout/fragment_broadcast_receiver" />
+    <fragment
+        android:id="@+id/nav_roomFragment"
+        android:name="com.sandbox.fragments.room.RoomFragment"
+        android:label="RoomFragment"
+        tools:layout="@layout/fragment_room" />
 </navigation>

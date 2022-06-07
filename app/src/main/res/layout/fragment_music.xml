@@ -14,12 +14,15 @@
             android:id="@+id/btn_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            style="@style/MyButtonStyle"
             android:text="play"
             android:textAllCaps="true"/>
         <Button
             android:id="@+id/btn_stop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/MyButtonStyle"
             android:text="stop"
             android:textAllCaps="true"/>
     </LinearLayout>

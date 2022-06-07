@@ -1,13 +1,14 @@
 package com.sandbox.fragments
 
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.sandbox.databinding.FragmentCountdownBinding
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
 
 
 class CountdownFragment : Fragment() {
@@ -36,24 +37,26 @@ class CountdownFragment : Fragment() {
 
 
 
-//        val handler = Handler()
-//        for(i in 0..5){
-//            handler.postDelayed({
-//                binding.textview.text = "${5-i}"
-//            }, i.toLong()*1000)
-//        }
+        val handler = Handler(Looper.getMainLooper())
+        for(i in 0..5){
+            handler.postDelayed({
+                _binding?.let{
+                    binding.textview.text = "${5 - i}"
+                }
+            }, i.toLong()*1000)
+        }
 
 
-//        var handler: Handler? = null
+//        var handler1: Handler? = null
 //        var i = 5
-//        handler = Handler{
+//        handler1 = Handler(Looper.getMainLooper()){
 //            binding.textview.text = i.toString()
 //            i -= 1
 //            if(i>0)
-//                handler?.sendEmptyMessageDelayed(0, 1000)
+//                handler1?.sendEmptyMessageDelayed(0, 1000)
 //            return@Handler true
 //        }
-//        handler.sendEmptyMessageDelayed(0, 1000)
+//        handler1.sendEmptyMessageDelayed(0, 1000)
 
 
 //        object : CountDownTimer(5100,1000){

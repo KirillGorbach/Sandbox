@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AsyncFragment">
+    tools:context=".fragments.retrofit.AsyncFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,48 +23,56 @@
                 android:id="@+id/btn_asynctask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyButtonStyle"
                 android:text="AsyncTask"
                 android:layout_gravity="center_horizontal"/>
             <Button
                 android:id="@+id/btn_rx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyButtonStyle"
                 android:text="RxAndroid"
                 android:layout_gravity="center_horizontal"/>
             <Button
                 android:id="@+id/btn_retrofit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyButtonStyle"
                 android:text="Retrofit"
                 android:layout_gravity="center_horizontal"/>
             <Button
                 android:id="@+id/btn_handler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyButtonStyle"
                 android:text="Handler"
                 android:layout_gravity="center_horizontal"/>
             <Button
                 android:id="@+id/btn_eventbus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyButtonStyle"
                 android:text="EventBus"
                 android:layout_gravity="center_horizontal"/>
             <Button
                 android:id="@+id/btn_glide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyButtonStyle"
                 android:text="Glide"
                 android:layout_gravity="center_horizontal"/>
             <Button
                 android:id="@+id/btn_picasso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyButtonStyle"
                 android:text="Picasso"
                 android:layout_gravity="center_horizontal"/>
             <Button
                 android:id="@+id/btn_clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyButtonStyle"
                 android:text="Clear"
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>

@@ -20,5 +20,9 @@
             android:id="@+id/nav_broadcastReceiverFragment"
             android:icon="@android:drawable/ic_menu_gallery"
             android:title="BroadcastReceiver" />
+        <item
+            android:id="@+id/nav_roomFragment"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="RoomFragment" />
     </group>
 </menu>

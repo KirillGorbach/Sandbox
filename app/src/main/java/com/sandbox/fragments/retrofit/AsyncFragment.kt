@@ -1,4 +1,4 @@
-package com.sandbox.fragments
+package com.sandbox.fragments.retrofit
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -10,15 +10,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
 import com.sandbox.R
 import com.sandbox.databinding.FragmentAsyncBinding
-import com.sandbox.fragments.retrofit.ImageClient
+import com.sandbox.fragments.room.UserDB
 import com.squareup.picasso.Picasso
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.core.Observer
-import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -59,8 +59,11 @@ class AsyncFragment : Fragment() {
 
         }
 
+
+
         return binding.root
     }
+
 
     private fun loadRetrofit(){
         ImageClient.getInstance().getImg {
