@@ -13,9 +13,12 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.sandbox.R
 import com.sandbox.databinding.FragmentAsyncBinding
+import com.sandbox.fragments.retrofit.ImageClient
 import com.squareup.picasso.Picasso
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Observer
+import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -52,11 +55,17 @@ class AsyncFragment : Fragment() {
             btnGlide.setOnClickListener { loadGlide() }
             btnPicasso.setOnClickListener { loadPicasso() }
             btnRx.setOnClickListener { loadRx() }
-            
+            btnRetrofit.setOnClickListener { loadRetrofit() }
 
         }
 
         return binding.root
+    }
+
+    private fun loadRetrofit(){
+        ImageClient.getInstance().getImg {
+            it?.let { binding.image.setImageBitmap(it) }
+        }
     }
 
     private fun loadRx(){

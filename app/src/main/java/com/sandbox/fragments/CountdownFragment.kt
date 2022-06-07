@@ -34,6 +34,8 @@ class CountdownFragment : Fragment() {
 
     private fun doWork(){
 
+
+
 //        val handler = Handler()
 //        for(i in 0..5){
 //            handler.postDelayed({
