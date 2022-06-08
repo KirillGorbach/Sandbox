@@ -27,6 +27,7 @@
     <style name="MyButtonStyle">
         <item name="backgroundTint">?attr/colorPrimary</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:layout_margin">5dp</item>
     </style>
 
     <style name="Theme.Sandbox.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

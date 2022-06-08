@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".customview.CustomViewFragment"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <com.sandbox.customview.TrafficLights
+        android:id="@+id/view_traffic_lights"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:firstActivated="red"
+        app:backgroundColor="@color/white"
+        />
+    <Button
+        android:id="@+id/btn_red_light"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/MyButtonStyle"
+        android:text="Red light"/>
+    <Button
+        android:id="@+id/btn_green_light"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/MyButtonStyle"
+        android:text="Green light"/>
+
+
+</LinearLayout>
