@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".customview.CustomViewFragment"
+    tools:context=".fragments.customview.CustomViewFragment"
     android:orientation="vertical"
     android:weightSum="1">
 
-    <com.sandbox.customview.TrafficLights
+    <com.sandbox.fragments.customview.TrafficLights
         android:id="@+id/view_traffic_lights"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

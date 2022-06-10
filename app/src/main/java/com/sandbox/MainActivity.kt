@@ -38,7 +38,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_countdown,
                 R.id.nav_broadcastReceiverFragment,
                 R.id.nav_roomFragment,
-                R.id.nav_customViewFragment
+                R.id.nav_customViewFragment,
+                R.id.nav_workManagerFragment,
+                R.id.nav_otherFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

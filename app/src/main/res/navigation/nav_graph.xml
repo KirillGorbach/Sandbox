@@ -34,7 +34,17 @@
         tools:layout="@layout/fragment_room" />
     <fragment
         android:id="@+id/nav_customViewFragment"
-        android:name="com.sandbox.customview.CustomViewFragment"
-        android:label="fragment_custom_view"
+        android:name="com.sandbox.fragments.customview.CustomViewFragment"
+        android:label="Custom View"
         tools:layout="@layout/fragment_custom_view" />
+    <fragment
+        android:id="@+id/nav_workManagerFragment"
+        android:name="com.sandbox.fragments.workmanager.WorkManagerFragment"
+        android:label="Simple Work Manager"
+        tools:layout="@layout/fragment_work_manager" />
+    <fragment
+        android:id="@+id/nav_otherFragment"
+        android:name="com.sandbox.fragments.other.OtherFragment"
+        android:label="Other"
+        tools:layout="@layout/fragment_other" />
 </navigation>

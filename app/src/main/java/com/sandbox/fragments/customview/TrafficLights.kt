@@ -1,4 +1,4 @@
-package com.sandbox.customview
+package com.sandbox.fragments.customview
 
 import android.content.Context
 import android.graphics.Canvas
