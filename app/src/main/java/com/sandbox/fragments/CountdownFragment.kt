@@ -1,5 +1,6 @@
 package com.sandbox.fragments
 
+import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
@@ -7,8 +8,8 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.sandbox.databinding.FragmentCountdownBinding
+import kotlinx.coroutines.flow.asFlow
 
 
 class CountdownFragment : Fragment() {
@@ -20,7 +21,7 @@ class CountdownFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding =FragmentCountdownBinding.inflate(inflater, container, false)
+        _binding = FragmentCountdownBinding.inflate(inflater, container, false)
 
         with(binding){
             btn.setOnClickListener {
@@ -34,8 +35,6 @@ class CountdownFragment : Fragment() {
     }
 
     private fun doWork(){
-
-
 
         val handler = Handler(Looper.getMainLooper())
         for(i in 0..5){

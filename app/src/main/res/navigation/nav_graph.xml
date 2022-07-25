@@ -47,4 +47,9 @@
         android:name="com.sandbox.fragments.other.OtherFragment"
         android:label="Other"
         tools:layout="@layout/fragment_other" />
+    <fragment
+        android:id="@+id/nav_pagingFragment"
+        android:name="com.sandbox.fragments.paging.PagingFragment"
+        android:label="Paging"
+        tools:layout="@layout/fragment_paging" />
 </navigation>

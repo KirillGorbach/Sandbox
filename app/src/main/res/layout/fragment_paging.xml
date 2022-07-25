@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.paging.PagingFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_paging"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/paging_list_item"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="?attr/colorPrimary"
+        android:textAlignment="center"
+        android:layout_gravity="center_vertical|end"
+        android:layout_margin="10dp"
+        android:maxWidth="200dp"
+        android:text="Всего три страницы по 100 элементов, в памяти хранится не более 200 элементов"/>
+
+</FrameLayout>

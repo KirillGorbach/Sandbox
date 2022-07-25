@@ -11,7 +11,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import java.io.InputStream
@@ -62,12 +61,11 @@ class ImageClient {
             .build()
     }
 
-    private val imgService = getHttpClient().let {
+    private val imgService =
         Retrofit.Builder()
             .baseUrl("https://ezhepedia.ru/")
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-            .client(it)
+            .client(getHttpClient())
             .build().create(ImgService::class.java)
-    }
+
 }

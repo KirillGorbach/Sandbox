@@ -22,12 +22,14 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.io.InputStream
+import java.lang.RuntimeException
 import java.net.URL
 
 
@@ -48,22 +50,39 @@ class AsyncFragment : Fragment() {
 
         with(binding){
 
-            btnAsynctask.setOnClickListener { loadAsyncTask() }
-            btnClear.setOnClickListener { image.setImageResource(R.drawable.no_img) }
+            btnFlow.setOnClickListener { loadFlow() }
             btnHandler.setOnClickListener { loadHandler() }
-            btnEventbus.setOnClickListener { loadEventBus() }
             btnGlide.setOnClickListener { loadGlide() }
             btnPicasso.setOnClickListener { loadPicasso() }
+            btnEventbus.setOnClickListener { loadEventBus() }
             btnRx.setOnClickListener { loadRx() }
             btnRetrofit.setOnClickListener { loadRetrofit() }
-
+            btnAsynctask.setOnClickListener { loadAsyncTask() }
+            btnClear.setOnClickListener { image.setImageResource(R.drawable.no_img) }
         }
-
-
 
         return binding.root
     }
 
+    private fun loadFlow(){
+        //может обработать множество запросов
+        val flow = flow { emit(IMG_URL) }
+            .mapNotNull {
+                val inputStream: InputStream = URL(it).openStream()
+                val bitmap = BitmapFactory.decodeStream(inputStream)
+                bitmap
+            }
+            .catch { println(it) }
+            .flowOn(Dispatchers.IO)
+
+
+        CoroutineScope(Dispatchers.Main).launch {
+            flow.collectLatest {
+                binding.image.setImageBitmap(it)
+            }
+        }
+
+    }
 
     private fun loadRetrofit(){
         ImageClient.getInstance().getImg {
@@ -146,23 +165,21 @@ class AsyncFragment : Fragment() {
     override fun onStop() { super.onStop(); EventBus.getDefault().unregister(this) }
 
     private fun loadHandler(){
-
-        runBlocking {
-            CoroutineScope(Dispatchers.Default).launch {
-                val url: String = IMG_URL
-                var bitmap: Bitmap? = null
-                try {
-                    val inputStream: InputStream = URL(url).openStream()
-                    bitmap = BitmapFactory.decodeStream(inputStream)
-                }catch (exception: Exception){
-                    exception.printStackTrace()
-                }
-                bitmap?.let {
-                    val handler = Handler(Looper.getMainLooper())
-                    handler.post { binding.image.setImageBitmap(it) }
-                }
+        CoroutineScope(Dispatchers.Default).launch {
+            val url: String = IMG_URL
+            var bitmap: Bitmap? = null
+            try {
+                val inputStream: InputStream = URL(url).openStream()
+                bitmap = BitmapFactory.decodeStream(inputStream)
+            }catch (exception: Exception){
+                exception.printStackTrace()
+            }
+            bitmap?.let {
+                val handler = Handler(Looper.getMainLooper())
+                handler.post { binding.image.setImageBitmap(it) }
             }
         }
+
 //        Thread{
 //            val url: String = IMG_URL
 //            var bitmap: Bitmap? = null

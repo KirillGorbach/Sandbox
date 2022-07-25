@@ -53,8 +53,6 @@ class App : Application() {
         return database
     }
 
-    
-
     companion object {
         var instance: App? = null
     }
